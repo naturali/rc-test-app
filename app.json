@@ -1,0 +1,15 @@
+{
+    "id": "21214d56-7834-4a19-921b-4081fd7d92bd",
+    "version": "0.0.2",
+    "requiredApiVersion": "^1.4.0",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "fy",
+        "homepage": "www.baidu.co",
+        "support": "www.baidu.com"
+    },
+    "name": "test-app",
+    "nameSlug": "test-app",
+    "classFile": "TestApp.ts",
+    "description": "test app"
+}
