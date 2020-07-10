@@ -9,7 +9,7 @@ import {
 import {
     ILivechatMessage,
     ILivechatRoom ,
-    ILivechatRoomClosedHandler,
+    IPostLivechatRoomClosed,
 } from '@rocket.chat/apps-engine/definition/livechat';
 import { IPostMessageSent } from '@rocket.chat/apps-engine/definition/messages';
 
@@ -18,7 +18,7 @@ import { IAppInfo } from '@rocket.chat/apps-engine/definition/metadata';
 import { PostMessageSentHandler } from './handler/PostMessageSentHandler';
 import { PostRoomDeletedHandler } from './handler/PostRoomDeletedHandler';
 
-export class TestApp extends App implements IPostMessageSent, ILivechatRoomClosedHandler {
+export class TestApp extends App implements IPostMessageSent, IPostLivechatRoomClosed {
     constructor(info: IAppInfo, logger: ILogger, accessors: IAppAccessors) {
         super(info, logger, accessors);
     }
@@ -33,7 +33,7 @@ export class TestApp extends App implements IPostMessageSent, ILivechatRoomClose
         await handler.run();
     }
 
-    public async executeLivechatRoomClosedHandler(
+    public async executePostLivechatRoomClosed(
         room: ILivechatRoom,
         read: IRead,
         http: IHttp,
@@ -41,5 +41,4 @@ export class TestApp extends App implements IPostMessageSent, ILivechatRoomClose
             const handler = new PostRoomDeletedHandler(room, read, http, persistence);
             await handler.run();
     }
-
 }

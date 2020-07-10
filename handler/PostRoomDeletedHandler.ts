@@ -12,12 +12,6 @@ export class PostRoomDeletedHandler {
         console.log('========================Room deleted============================');
         console.log('room:');
         console.log(this.room);
-        console.log('read:');
-        console.log( this.read);
-        console.log('http:');
-        console.log(this.http);
-        console.log('persis:');
-        console.log(this.persis);
         console.log('================================================================');
     }
 }
